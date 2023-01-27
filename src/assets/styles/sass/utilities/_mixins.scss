@@ -1,0 +1,64 @@
+@mixin efectSections(
+  $bg,
+  $inclination: polygon(0 100%, 100% 30%, 100% 100%, 0 100%)
+) {
+  background: $bg;
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  bottom: -1px;
+  clip-path: $inclination;
+  @content;
+}
+
+@mixin btn-cellphone {
+  width: 10px;
+  position: absolute;
+  right: -5px;
+}
+
+@mixin btn-landing($bg, $secondColor, $textColor) {
+  padding: 0 25px;
+  position: relative;
+  height: 3.5em;
+  border: 3px ridge $bg;
+  outline: none;
+  background-color: transparent;
+  color: $textColor;
+  transition: 1s;
+  border-radius: 0.3em;
+  font-size: 16px;
+  font-weight: bold;
+  //@content;
+
+  &:hover {
+    box-shadow: inset 0px 0px 25px $bg;
+
+    &::before,
+    &::after {
+      transform: scale(0);
+    }
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    transform-origin: center;
+    position: absolute;
+    left: 3%;
+    width: 95%;
+    height: 40%;
+    background-color: $secondColor;
+    transition: 0.5s;
+  }
+
+  &::before {
+    top: 80%;
+  }
+
+  &::after {
+    top: -10%;
+  }
+
+  @content;
+}

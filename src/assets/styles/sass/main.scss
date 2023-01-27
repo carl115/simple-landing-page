@@ -1,0 +1,16 @@
+@import "./utilities/variables";
+@import "./utilities/mixins";
+
+@import "./themes/theme";
+
+@import "../../../../node_modules/bootstrap/scss/bootstrap.scss";
+
+@import "./components/sliderHeader";
+@import "./components/minicard";
+@import "./components/cellphone";
+
+@import "./layout/header";
+@import "./layout/nav";
+@import "./layout/footer";
+
+@import "./views/home";

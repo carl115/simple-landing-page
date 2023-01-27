@@ -1,0 +1,14 @@
+.minicard {
+  background: $secondary-2;
+  width: 100%;
+  padding: 1rem;
+  transition: transform 800ms;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  p {
+    margin: 0;
+  }
+}

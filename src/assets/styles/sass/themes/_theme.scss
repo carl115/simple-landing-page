@@ -1,0 +1,7 @@
+$new-colors: (
+  "secondary-1": $secondary-1,
+  "secondary-2": $secondary-2,
+  "secondary-3": $secondary-3,
+);
+
+$theme-colors: map-merge($theme-colors, $new-colors);

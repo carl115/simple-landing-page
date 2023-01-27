@@ -1,0 +1,257 @@
+.section-one {
+  background: $secondary-1;
+  padding: 4rem;
+
+  &__images {
+    @include make-row();
+    gap: 30px;
+    justify-content: center;
+
+    .images__image {
+      @include make-col(3);
+      width: 250px;
+      object-fit: cover;
+    }
+  }
+
+  &__button {
+    @include btn-landing(
+      $bg: $secondary-2,
+      $secondColor: $secondary-1,
+      $textColor: $secondary-2
+    );
+  }
+
+  @media (max-width: 425px) {
+    &__button {
+      white-space: nowrap;
+    }
+  }
+}
+
+.section-two {
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__content {
+    width: 50%;
+  }
+
+  @media (max-width: 425px) {
+    & {
+      flex-direction: column;
+      padding: 2rem;
+    }
+
+    &__content {
+      width: 100%;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.section-three {
+  background: $secondary-3;
+  width: 100%;
+  position: relative;
+
+  &::after {
+    content: "";
+    @include efectSections($bg: #fff);
+  }
+
+  &__video {
+    background: $secondary-2;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .video__play {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #fff;
+      border-radius: 50%;
+      transition: all 500ms;
+
+      &:hover {
+        transform: scale(0.5);
+      }
+    }
+  }
+
+  @media (max-width: 375px) {
+    & {
+      padding: 70px 0 !important;
+    }
+
+    &__video {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.section-four {
+  &__button {
+    @include btn-landing(
+      $bg: $secondary-2,
+      $secondColor: $secondary-1,
+      $textColor: $secondary-2
+    );
+  }
+
+  @media (max-width: 375px) {
+    & {
+      padding: 20px 30px !important;
+    }
+  }
+}
+
+.section-five {
+  position: relative;
+
+  &::after {
+    content: "";
+    @include efectSections(
+      $bg: #fff,
+      $inclination: polygon(0 0, 100% 0, 100% 100%, 100% 65%)
+    ) {
+      top: -1px;
+      bottom: auto;
+    }
+  }
+
+  &__text-1 {
+    background: $secondary-2;
+    padding: 65px 50px;
+
+    .text-1__content {
+      width: 600px;
+    }
+  }
+
+  &__text-2 {
+    background: $secondary-3;
+    padding: 65px 50px;
+
+    .text-2__content {
+      width: 600px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    &__text-1 {
+      .text-1__content {
+        width: 500px;
+      }
+    }
+
+    &__text-2 {
+      .text-2__content {
+        width: 500px;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    &__text-1 {
+      .text-1__content {
+        width: 250px;
+      }
+    }
+
+    &__text-2 {
+      .text-2__content {
+        width: 250px;
+      }
+    }
+  }
+
+  @media (max-width: 425px) {
+    &__text-1 {
+      padding: 60px 20px;
+
+      .text-1__content {
+        width: 100%;
+      }
+    }
+
+    &__text-2 {
+      padding: 60px 20px;
+
+      .text-2__content {
+        width: 100%;
+        height: 400px;
+      }
+    }
+  }
+
+  @media (max-width: 375px) {
+    &__text-2 {
+      .text-2__content {
+        height: 500px;
+      }
+    }
+  }
+}
+
+.section-form {
+  &__image-profile {
+    width: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .image-profile__photo {
+      background: $secondary-1;
+      color: $secondary-2;
+      padding: 30px;
+      margin-right: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__submit {
+    @include btn-landing(
+      $bg: $secondary-2,
+      $secondColor: #fff,
+      $textColor: $secondary-2
+    );
+  }
+
+  @media (max-width: 768px) {
+    &__image-profile {
+      width: 100%;
+      margin-bottom: 40px;
+      flex-direction: column;
+
+      .image-profile__photo {
+        margin: 0 0 20px 0;
+      }
+    }
+  }
+
+  @media (max-width: 425px) {
+    & {
+      padding: 40px 30px !important;
+
+      &__image-profile {
+        text-align: center;
+      }
+    }
+  }
+}
